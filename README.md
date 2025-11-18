@@ -1,0 +1,3 @@
+```bash
+cmake . && make && ./test
+```
