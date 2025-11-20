@@ -16,7 +16,6 @@ int main(){
     act_user1.sa_handler = asm_signal_entry;
     //act_user1.sa_flags |= SA_ONSTACK;
     assert(sigaction(SIGUSR1, &act_user1, NULL) == 0);
-    void* new_stack = mmap(0, stack_size, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
     printf("start\n");
     asm volatile(
         "xorl %%ecx, %%ecx\n\t"
